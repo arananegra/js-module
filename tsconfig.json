@@ -3,11 +3,13 @@
         "rootDir": "./src",
         "module": "commonjs",
         "target": "es6",
-        "noImplicitAny": true,
+        "lib": ["es2018"],
+        "strict": false,
+        "noImplicitAny": false,
         "sourceMap": true,
         "outDir": "./dist",
         "noEmitOnError": true,
-        "declaration": true
+        "declaration": true,
     },
     "exclude": [
         "node_modules",

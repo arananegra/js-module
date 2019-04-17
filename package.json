@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npm-run-all --parallel tsc:watch serve",
     "tsc:watch": "tsc -w",
-    "serve": "nodemon --inspect --watch dist/ -d 1 ./dist/index.js"
+    "serve": "nodemon --inspect --watch dist/ -d 1 ./dist/index.js",
+    "help": "nodemon --help options"
   },
   "author": "Alvaro",
   "license": "MIT",
