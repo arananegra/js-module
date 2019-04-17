@@ -55,7 +55,51 @@ const b = { name: "Luisa", age: 31, married: true };
 
 //4. Read books
 
+interface Book {
+    title: string;
+    isRead: boolean;
+}
 
+function isBookRead(books: Array<Book>, titleToSearch: string): boolean {
+    return books.find((book: Book) => {
+        return (book.title === titleToSearch && book.isRead === true);
+    }) !== undefined ? true : false;
+}
 
+const books: Array<Book> = [
+    { title: "Harry Potter y la piedra filosofal", isRead: true },
+    { title: "Canción de hielo y fuego", isRead: false },
+    { title: "Devastación", isRead: true },
+];
 
+//console.log(isBookRead(books, "Harry Potter y la piedra filosofal"));
 
+//5. Slot Machine
+class SlotMachine {
+    private coinsCounter: number;
+    constructor() {
+        this.coinsCounter = 0;
+    }
+    private generateRouletteBooleans(): Array<boolean> {
+        return [Boolean(Math.round(Math.random())), Boolean(Math.round(Math.random())), Boolean(Math.round(Math.random()))]
+    }
+
+    public play() {
+        const rouletteBooleans: Array<boolean> = this.generateRouletteBooleans();
+        const matchIsLost = rouletteBooleans.find(value => value === false);
+        if (matchIsLost !== undefined) {
+            this.coinsCounter++;
+            console.log("Good luck next time!!");
+        } else {
+            console.log(`Congratulations!!!. You won ${this.coinsCounter} coins!!`)
+            this.coinsCounter = 0;
+        }
+    }
+}
+
+// const machine1 = new SlotMachine();
+// machine1.play();
+// machine1.play();
+// machine1.play();
+// machine1.play();
+// machine1.play();
