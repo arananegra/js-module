@@ -78,7 +78,7 @@ const books: Array<Book> = [
 class SlotMachine {
     private coinsCounter: number;
     constructor() {
-        this.coinsCounter = 0;
+        this.coinsCounter = 1;
     }
     private generateRouletteBooleans(): Array<boolean> {
         return [Boolean(Math.round(Math.random())), Boolean(Math.round(Math.random())), Boolean(Math.round(Math.random()))]
@@ -92,7 +92,7 @@ class SlotMachine {
             console.log("Good luck next time!!");
         } else {
             console.log(`Congratulations!!!. You won ${this.coinsCounter} coins!!`)
-            this.coinsCounter = 0;
+            this.coinsCounter = 1;
         }
     }
 }
